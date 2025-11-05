@@ -288,10 +288,10 @@
     rgba(10, 10, 10, 0.9));
   color: var(--gold-light);
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  letter-spacing: 0.16em;
-  padding: 1.3rem 3.2rem;
+  letter-spacing: 0.1em;
+  padding: 1.2rem 2.5rem;
   border: 3px solid;
   border-image: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark)) 1;
   border-radius: 16px;
@@ -303,6 +303,12 @@
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transform-style: preserve-3d;
   overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  word-break: keep-all;
+  white-space: nowrap;
 }
 
 .btn-3d-outline::before {
