@@ -306,26 +306,37 @@ html {
 
 /* Gold Shimmer Effect */
 @keyframes goldShimmer {
-  0% {
-    background-position: -100% 0;
+  0%, 100% {
+    background-position: 0% 50%;
   }
-  100% {
-    background-position: 200% 0;
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes goldPulse {
+  0%, 100% {
+    filter: brightness(1) drop-shadow(0 0 40px rgba(212, 175, 55, 0.6));
+  }
+  50% {
+    filter: brightness(1.2) drop-shadow(0 0 60px rgba(212, 175, 55, 0.9));
   }
 }
 
 .hero-title {
-  background: linear-gradient(90deg, 
+  background: linear-gradient(135deg, 
     var(--gold-dark) 0%, 
-    var(--gold-light) 25%, 
+    var(--gold-light) 20%, 
+    #FFD700 40%,
     var(--gold) 50%, 
-    var(--gold-light) 75%, 
+    #FFD700 60%,
+    var(--gold-light) 80%, 
     var(--gold-dark) 100%);
-  background-size: 200% auto;
+  background-size: 300% 300%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: goldShimmer 4s linear infinite;
+  animation: goldShimmer 5s ease-in-out infinite, goldPulse 3s ease-in-out infinite;
 }
 
 /* Parallax on Scroll */
