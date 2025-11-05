@@ -78,9 +78,9 @@
 }
 
 .hero-subtitle {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: clamp(1.5rem, 3.5vw, 2.8rem);
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.15em;
   color: #FFFFFF;
   text-transform: uppercase;
