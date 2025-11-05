@@ -857,6 +857,28 @@
   }
 }
 
+/* ========== АДАПТИВНЫЙ ТЕКСТ КНОПОК ========== */
+.booking-btn-text {
+  display: inline;
+}
+
+@media (max-width: 480px) {
+  .booking-btn-text::before {
+    content: 'Забронировать';
+    display: inline;
+  }
+  
+  .booking-btn-text {
+    display: none;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .booking-btn-text {
+    font-size: 0.9rem;
+  }
+}
+
 /* ========== SCROLL BEHAVIOR ========== */
 html {
   scroll-behavior: smooth;
