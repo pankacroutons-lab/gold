@@ -3,14 +3,17 @@
   min-height: 100vh;
 }
 
-/* Custom Variables - Luxurious Boho Gold */
+/* Custom Variables - Ultra-Luxurious 2025 Gold */
 :root {
   --gold: #D4AF37;
-  --gold-light: #F4E5A3;
+  --gold-light: #FFE57F;
+  --gold-bright: #FFD700;
   --gold-dark: #AA8929;
   --black: #000000;
   --dark-gray: #0a0a0a;
   --cream: #f7f5f2;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(212, 175, 55, 0.2);
 }
 
 /* Premium Typography */
