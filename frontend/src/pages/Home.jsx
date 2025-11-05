@@ -8,6 +8,39 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 const Home = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [formData, setFormData] = useState({
+    name: '',
+    date: '',
+    time: '',
+    guests: ''
+  });
+
+  const handleInputChange = (field, value) => {
+    setFormData(prev => ({
+      ...prev,
+      [field]: value
+    }));
+  };
+
+  const handleBooking = () => {
+    const { name, date, time, guests } = formData;
+    
+    // Format date from YYYY-MM-DD to DD/MM/YYYY
+    let formattedDate = date;
+    if (date) {
+      const [year, month, day] = date.split('-');
+      formattedDate = `${day}/${month}/${year}`;
+    }
+    
+    // Create WhatsApp message
+    const message = `Здравствуйте! Меня зовут ${name || '[имя не указано]'}, хочу забронировать столик в караоке ${formattedDate || '[дата не указана]'} на ${time || '[время не указано]'}, количество гостей ${guests || '[не указано]'}`;
+    
+    // Encode message for URL
+    const encodedMessage = encodeURIComponent(message);
+    
+    // Open WhatsApp
+    window.open(`https://wa.me/66820390661?text=${encodedMessage}`, '_blank');
+  };
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
