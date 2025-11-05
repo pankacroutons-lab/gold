@@ -313,7 +313,7 @@ const Home = () => {
       <section id="booking" className="py-24 bg-black">
         <div className="max-w-3xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
-            <h2 className="section-title">Бронирование</h2>
+            <h2 className="section-title">БРОНЬ</h2>
             <div className="gold-divider"></div>
           </div>
 
