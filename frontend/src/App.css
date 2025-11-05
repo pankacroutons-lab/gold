@@ -708,15 +708,33 @@
     height: 250px;
   }
   
+  /* Идеальные кнопки для мобильных */
   .btn-3d-gold {
-    padding: 1.3rem 2.5rem;
-    font-size: 1.15rem;
-    letter-spacing: 0.15em;
+    padding: 1rem 1.5rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    border-radius: 12px;
+    white-space: normal;
+    line-height: 1.4;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
   
   .btn-3d-outline {
-    padding: 1.2rem 2.2rem;
-    font-size: 1.1rem;
+    padding: 0.9rem 1.3rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    border-radius: 12px;
+    white-space: normal;
+    line-height: 1.4;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
   
   .menu-card-3d,
@@ -730,7 +748,7 @@
   }
   
   .menu-card-subtitle {
-    font-size: 1.15rem;
+    font-size: 1.05rem;
   }
   
   .hall-title {
@@ -738,16 +756,16 @@
   }
   
   .hall-description {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
   }
   
   .form-label {
-    font-size: 1.05rem;
+    font-size: 1rem;
   }
   
   .input-3d {
-    font-size: 1.05rem;
-    padding: 1rem 1.2rem;
+    font-size: 1rem;
+    padding: 0.95rem 1.1rem;
   }
   
   .footer-title {
@@ -756,7 +774,7 @@
   
   .footer-text,
   .footer-link {
-    font-size: 1.05rem;
+    font-size: 1rem;
   }
   
   .social-icon-3d {
@@ -774,7 +792,7 @@
   }
 }
 
-/* ========== EXTRA SMALL MOBILE ========== */
+/* ========== EXTRA SMALL MOBILE - PERFECT BUTTONS ========== */
 @media (max-width: 480px) {
   .hero-title {
     font-size: clamp(2.5rem, 18vw, 5rem);
@@ -782,8 +800,17 @@
   }
   
   .btn-3d-gold {
-    padding: 1.2rem 2rem;
-    font-size: 1.05rem;
+    padding: 0.9rem 1.2rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    min-height: 48px;
+  }
+  
+  .btn-3d-outline {
+    padding: 0.85rem 1rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    min-height: 46px;
   }
   
   .gallery-item {
@@ -792,6 +819,29 @@
   
   .gallery-item img {
     height: 220px;
+  }
+  
+  .menu-card-title {
+    font-size: 1.6rem;
+  }
+  
+  .menu-card-subtitle {
+    font-size: 0.95rem;
+  }
+}
+
+/* ========== TINY SCREENS - ULTRA COMPACT ========== */
+@media (max-width: 375px) {
+  .btn-3d-gold {
+    padding: 0.8rem 1rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.03em;
+  }
+  
+  .btn-3d-outline {
+    padding: 0.75rem 0.9rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.02em;
   }
 }
 
