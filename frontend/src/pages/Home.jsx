@@ -378,9 +378,9 @@ const Home = () => {
                   rel="noopener noreferrer"
                   className="block"
                 >
-                  <Button type="button" className="btn-3d-gold w-full text-xl py-8">
-                    <MessageCircle className="mr-3" size={24} />
-                    Забронировать через WhatsApp
+                  <Button type="button" className="btn-3d-gold w-full py-6">
+                    <MessageCircle className="mr-2 flex-shrink-0" size={20} />
+                    <span className="booking-btn-text">Забронировать через WhatsApp</span>
                   </Button>
                 </a>
               </form>
