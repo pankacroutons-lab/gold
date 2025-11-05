@@ -344,6 +344,47 @@ html {
   transform: translateY(calc(var(--scroll) * 0.5px));
 }
 
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: clamp(2rem, 12vw, 5rem);
+    letter-spacing: 0.1em;
+  }
+  
+  .hero-subtitle {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    letter-spacing: 0.1em;
+  }
+  
+  .section-title {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+  
+  .gallery-item {
+    height: 250px;
+  }
+  
+  .menu-card,
+  .booking-card {
+    padding: 1.5rem !important;
+  }
+  
+  .btn-gold,
+  .btn-gold-outline {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .hall-image-container {
+    padding: 0.5rem;
+  }
+  
+  .social-icon {
+    width: 45px;
+    height: 45px;
+  }
+}
+
 /* Selection */
 ::selection {
   background: var(--gold);
