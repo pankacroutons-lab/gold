@@ -542,16 +542,6 @@
   display: inline;
 }
 
-@media (max-width: 480px) {
-  .booking-btn-text::before {
-    content: 'Забронировать';
-  }
-  
-  .booking-btn-text {
-    display: none;
-  }
-}
-
 /* ========== SCROLL BEHAVIOR ========== */
 html {
   scroll-behavior: smooth;
