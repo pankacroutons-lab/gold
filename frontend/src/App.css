@@ -611,11 +611,11 @@
 }
 
 .footer-text {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.15rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.85);
-  line-height: 1.8;
-  font-weight: 500;
+  line-height: 1.7;
+  font-weight: 400;
 }
 
 .footer-link {
@@ -623,8 +623,8 @@
   align-items: center;
   color: rgba(255, 255, 255, 0.85);
   transition: all 0.3s ease;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.15rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
 }
 
 .footer-link:hover {
