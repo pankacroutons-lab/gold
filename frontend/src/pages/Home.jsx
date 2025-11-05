@@ -173,10 +173,10 @@ const Home = () => {
               'https://customer-assets.emergentagent.com/job_premiumkaraoke/artifacts/7gu90uwl_12.jpg',
               'https://customer-assets.emergentagent.com/job_premiumkaraoke/artifacts/x30i4p87_13.jpg',
               'https://customer-assets.emergentagent.com/job_premiumkaraoke/artifacts/t1eocam4_15.jpg',
-              'https://customer-assets.emergentagent.com/job_premiumkaraoke/artifacts/wudhbjyx_15.jpg',
               'https://customer-assets.emergentagent.com/job_premiumkaraoke/artifacts/mx4iz5yr_16.jpg',
               'https://customer-assets.emergentagent.com/job_premiumkaraoke/artifacts/gxrm4b02_17.jpg',
-              'https://customer-assets.emergentagent.com/job_premiumkaraoke/artifacts/vmh4an1d_18.jpg'
+              'https://customer-assets.emergentagent.com/job_premiumkaraoke/artifacts/vmh4an1d_18.jpg',
+              'https://customer-assets.emergentagent.com/job_premiumkaraoke/artifacts/k4i437jh_19.jpg'
             ].map((img, index) => (
               <div 
                 key={index} 
