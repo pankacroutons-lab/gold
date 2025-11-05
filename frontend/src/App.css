@@ -70,23 +70,25 @@
   letter-spacing: 0.1em;
   position: relative;
   padding: 0.5rem 0;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .nav-link::after {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 0;
   height: 2px;
-  background: var(--gold);
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
   transition: width 0.3s ease;
 }
 
 .nav-link:hover,
 .nav-link.active {
   color: var(--gold);
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
 }
 
 .nav-link:hover::after,
