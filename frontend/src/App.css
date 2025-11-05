@@ -591,30 +591,131 @@
   }
 }
 
-/* ========== MOBILE OPTIMIZATIONS ========== */
+/* ========== PREMIUM MOBILE OPTIMIZATION - 2025 ========== */
 @media (max-width: 768px) {
   .hero-title {
-    font-size: clamp(2.5rem, 14vw, 6rem);
-    letter-spacing: 0.15em;
+    font-size: clamp(3rem, 16vw, 7rem);
+    letter-spacing: 0.18em;
+    line-height: 1.1;
+  }
+  
+  .hero-title::before {
+    filter: blur(15px);
   }
   
   .hero-subtitle {
-    font-size: clamp(1.2rem, 5vw, 2rem);
-    letter-spacing: 0.1em;
+    font-size: clamp(1.3rem, 5.5vw, 2.2rem);
+    letter-spacing: 0.12em;
+    line-height: 1.5;
+  }
+  
+  .hero-description {
+    font-size: clamp(1.1rem, 4vw, 1.6rem);
   }
   
   .section-title {
-    font-size: clamp(2.5rem, 10vw, 4rem);
+    font-size: clamp(2.8rem, 11vw, 4.5rem);
+    letter-spacing: 0.1em;
+  }
+  
+  .about-text {
+    font-size: clamp(1.2rem, 4.5vw, 1.6rem);
+    line-height: 1.8;
   }
   
   .gallery-item {
-    height: 280px;
+    height: 250px;
+    border-width: 2px;
   }
   
-  .btn-3d-gold,
+  .gallery-item img {
+    height: 250px;
+  }
+  
+  .btn-3d-gold {
+    padding: 1.3rem 2.5rem;
+    font-size: 1.15rem;
+    letter-spacing: 0.15em;
+  }
+  
   .btn-3d-outline {
-    padding: 1.1rem 2rem;
+    padding: 1.2rem 2.2rem;
     font-size: 1.1rem;
+  }
+  
+  .menu-card-3d,
+  .booking-card-3d,
+  .hall-card-3d {
+    border-radius: 16px;
+  }
+  
+  .menu-card-title {
+    font-size: 1.8rem;
+  }
+  
+  .menu-card-subtitle {
+    font-size: 1.15rem;
+  }
+  
+  .hall-title {
+    font-size: 2rem;
+  }
+  
+  .hall-description {
+    font-size: 1.25rem;
+  }
+  
+  .form-label {
+    font-size: 1.05rem;
+  }
+  
+  .input-3d {
+    font-size: 1.05rem;
+    padding: 1rem 1.2rem;
+  }
+  
+  .footer-title {
+    font-size: 1.5rem;
+  }
+  
+  .footer-text,
+  .footer-link {
+    font-size: 1.05rem;
+  }
+  
+  .social-icon-3d {
+    width: 55px;
+    height: 55px;
+  }
+  
+  nav {
+    padding: 0.5rem 0;
+  }
+  
+  .gold-divider {
+    width: 120px;
+    height: 4px;
+  }
+}
+
+/* ========== EXTRA SMALL MOBILE ========== */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: clamp(2.5rem, 18vw, 5rem);
+    letter-spacing: 0.15em;
+  }
+  
+  .btn-3d-gold {
+    padding: 1.2rem 2rem;
+    font-size: 1.05rem;
+  }
+  
+  .gallery-item {
+    height: 220px;
+  }
+  
+  .gallery-item img {
+    height: 220px;
   }
 }
 
