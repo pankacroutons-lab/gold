@@ -352,13 +352,15 @@ const Home = () => {
 
           <Card className="booking-card-3d">
             <CardContent className="p-10">
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                 <div>
                   <label className="form-label">Ваше имя</label>
                   <Input 
                     type="text" 
                     placeholder="Введите ваше имя"
                     className="input-3d"
+                    value={formData.name}
+                    onChange={(e) => handleInputChange('name', e.target.value)}
                   />
                 </div>
 
@@ -368,11 +370,13 @@ const Home = () => {
                     <Input 
                       type="date" 
                       className="input-3d"
+                      value={formData.date}
+                      onChange={(e) => handleInputChange('date', e.target.value)}
                     />
                   </div>
                   <div>
                     <label className="form-label">Время</label>
-                    <Select>
+                    <Select value={formData.time} onValueChange={(value) => handleInputChange('time', value)}>
                       <SelectTrigger className="input-3d">
                         <SelectValue placeholder="Выберите время" />
                       </SelectTrigger>
@@ -392,7 +396,7 @@ const Home = () => {
 
                 <div>
                   <label className="form-label">Количество гостей</label>
-                  <Select>
+                  <Select value={formData.guests} onValueChange={(value) => handleInputChange('guests', value)}>
                     <SelectTrigger className="input-3d">
                       <SelectValue placeholder="Выберите количество" />
                     </SelectTrigger>
@@ -405,17 +409,14 @@ const Home = () => {
                 </div>
 
                 <div className="flex justify-center pt-4">
-                  <a
-                    href="https://wa.me/66820390661?text=Здравствуйте!%20Хочу%20забронировать%20столик%20в%20The%20Gold"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full"
+                  <Button 
+                    type="button" 
+                    className="btn-3d-gold w-full"
+                    onClick={handleBooking}
                   >
-                    <Button type="button" className="btn-3d-gold w-full">
-                      <MessageCircle size={20} />
-                      <span className="booking-btn-text">Забронировать через WhatsApp</span>
-                    </Button>
-                  </a>
+                    <MessageCircle size={20} />
+                    <span className="booking-btn-text">Забронировать</span>
+                  </Button>
                 </div>
               </form>
             </CardContent>
