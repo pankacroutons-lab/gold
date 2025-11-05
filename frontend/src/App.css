@@ -23,32 +23,58 @@
   font-family: 'Cinzel', 'Playfair Display', serif;
 }
 
-/* ========== HERO SECTION ========== */
+/* ========== HERO SECTION - 2025 ULTRA PREMIUM ========== */
 .hero-title {
   font-family: 'Cinzel', serif;
-  font-size: clamp(4rem, 12vw, 10rem);
+  font-size: clamp(4rem, 12vw, 11rem);
   font-weight: 900;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.25em;
   background: linear-gradient(135deg, 
     #FFD700 0%, 
-    var(--gold-light) 20%,
-    var(--gold) 40%, 
-    #FFC107 60%,
-    var(--gold-light) 80%, 
+    #FFED4E 15%,
+    var(--gold-light) 30%,
+    var(--gold) 50%, 
+    var(--gold-light) 70%,
+    #FFED4E 85%, 
     #FFD700 100%);
-  background-size: 300% 300%;
+  background-size: 400% 400%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: goldShimmer 6s ease-in-out infinite;
-  filter: drop-shadow(0 8px 24px rgba(212, 175, 55, 0.8)) drop-shadow(0 0 40px rgba(255, 215, 0, 0.6));
+  animation: goldShimmer 8s ease-in-out infinite, floatTitle 6s ease-in-out infinite;
+  filter: drop-shadow(0 10px 30px rgba(212, 175, 55, 0.9)) 
+          drop-shadow(0 0 60px rgba(255, 215, 0, 0.7))
+          drop-shadow(0 0 100px rgba(255, 215, 0, 0.4));
   text-transform: uppercase;
-  line-height: 1.1;
+  line-height: 1;
+  position: relative;
+}
+
+.hero-title::before {
+  content: 'THE GOLD';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, 
+    rgba(255, 215, 0, 0.3) 0%, 
+    rgba(212, 175, 55, 0.2) 50%,
+    rgba(255, 215, 0, 0.3) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: blur(20px);
+  z-index: -1;
 }
 
 @keyframes goldShimmer {
   0%, 100% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
+}
+
+@keyframes floatTitle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
 }
 
 .hero-subtitle {
