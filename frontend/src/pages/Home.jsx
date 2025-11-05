@@ -304,7 +304,7 @@ const Home = () => {
                   className="w-full h-auto rounded-xl"
                 />
               </div>
-              <p className="hall-description">Приватная VIP-зона с отдельным баром</p>
+              <p className="hall-description">Приватная VIP-зона</p>
             </div>
           </div>
         </div>
