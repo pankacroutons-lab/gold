@@ -304,6 +304,35 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Gold Shimmer Effect */
+@keyframes goldShimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.hero-title {
+  background: linear-gradient(90deg, 
+    var(--gold-dark) 0%, 
+    var(--gold-light) 25%, 
+    var(--gold) 50%, 
+    var(--gold-light) 75%, 
+    var(--gold-dark) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: goldShimmer 4s linear infinite;
+}
+
+/* Parallax on Scroll */
+.parallax-slow {
+  transform: translateY(calc(var(--scroll) * 0.5px));
+}
+
 /* Selection */
 ::selection {
   background: var(--gold);
