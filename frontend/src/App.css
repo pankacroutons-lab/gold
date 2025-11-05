@@ -96,27 +96,65 @@
   width: 100%;
 }
 
-/* Buttons */
+/* 3D Buttons */
 .btn-gold {
-  background: linear-gradient(135deg, var(--gold-dark), var(--gold), var(--gold-light));
+  position: relative;
+  background: linear-gradient(145deg, #F4D03F 0%, var(--gold) 50%, var(--gold-dark) 100%);
   color: var(--black);
   font-family: 'Cormorant', serif;
-  font-size: 1.1rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  padding: 1rem 2.5rem;
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  padding: 1.1rem 3rem;
   border: none;
-  border-radius: 0;
+  border-radius: 8px;
   text-transform: uppercase;
-  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 
+    0 8px 16px rgba(0, 0, 0, 0.5),
+    0 4px 8px rgba(212, 175, 55, 0.4),
+    inset 0 2px 0 rgba(255, 255, 255, 0.3),
+    inset 0 -2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.btn-gold::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.3) 0%, transparent 50%);
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .btn-gold:hover {
-  background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
-  transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.6);
+  background: linear-gradient(145deg, #FFD700 0%, var(--gold-light) 50%, var(--gold) 100%);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 
+    0 12px 28px rgba(0, 0, 0, 0.6),
+    0 8px 16px rgba(212, 175, 55, 0.6),
+    inset 0 2px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -2px 10px rgba(0, 0, 0, 0.15),
+    0 0 30px rgba(212, 175, 55, 0.5);
   color: var(--black);
+}
+
+.btn-gold:hover::before {
+  opacity: 1;
+}
+
+.btn-gold:active {
+  transform: translateY(-1px) scale(0.98);
+  box-shadow: 
+    0 4px 12px rgba(0, 0, 0, 0.5),
+    0 2px 6px rgba(212, 175, 55, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 4px rgba(0, 0, 0, 0.3);
 }
 
 .btn-gold-outline {
