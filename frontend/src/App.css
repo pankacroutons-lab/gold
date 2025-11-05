@@ -58,10 +58,26 @@
 
 /* Gold Divider */
 .gold-divider {
-  width: 120px;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  width: 140px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--gold-light), var(--gold), var(--gold-light), transparent);
   margin: 0 auto 2rem;
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.5);
+}
+
+/* Text Readability Improvements */
+p {
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: #FFFFFF;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  line-height: 1.5;
+  color: var(--gold);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 /* Navigation */
