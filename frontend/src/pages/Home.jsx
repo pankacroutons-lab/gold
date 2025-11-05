@@ -41,9 +41,9 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-black/95 backdrop-blur-xl z-50 border-b border-gold/30">
+      <nav className="fixed top-0 w-full bg-black/95 backdrop-blur-xl z-50 border-b border-white/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="flex justify-between items-center h-24">
+          <div className="flex justify-between items-center h-20">
             <button 
               onClick={() => scrollToSection('home')}
               className="flex items-center transition-transform hover:scale-105 duration-300"
@@ -51,16 +51,16 @@ const Home = () => {
               <img 
                 src="https://customer-assets.emergentagent.com/job_2eeabbe5-00cd-41df-984e-a7494f2fec1a/artifacts/w9regwv9_logo2.png" 
                 alt="The Gold Logo" 
-                className="h-16 w-auto filter drop-shadow-2xl"
+                className="h-14 w-auto"
               />
             </button>
 
-            <div className="hidden md:flex items-center space-x-10">
+            <div className="hidden md:flex items-center space-x-8">
               {[
                 { id: 'about', label: 'О нас' },
                 { id: 'menu', label: 'Меню' },
                 { id: 'halls', label: 'Зал' },
-                { id: 'booking', label: 'Бронирование' },
+                { id: 'booking', label: 'Бронь' },
                 { id: 'video', label: 'Галерея' },
                 { id: 'contact', label: 'Контакты' }
               ].map((item) => (
@@ -78,26 +78,26 @@ const Home = () => {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="md:hidden text-gold hover:text-gold-light transition-colors"
             >
-              {isMenuOpen ? <X size={32} /> : <Menu size={32} />}
+              {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
         </div>
 
         {isMenuOpen && (
-          <div className="md:hidden bg-black/98 border-t border-gold/30">
-            <div className="px-6 py-8 space-y-4">
+          <div className="md:hidden bg-black/98 border-t border-white/10">
+            <div className="px-6 py-6 space-y-3">
               {[
                 { id: 'about', label: 'О нас' },
                 { id: 'menu', label: 'Меню' },
                 { id: 'halls', label: 'Зал' },
-                { id: 'booking', label: 'Бронирование' },
+                { id: 'booking', label: 'Бронь' },
                 { id: 'video', label: 'Галерея' },
                 { id: 'contact', label: 'Контакты' }
               ].map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="block w-full text-left px-6 py-4 text-xl text-white hover:text-gold hover:bg-gold/10 rounded-lg transition-all"
+                  className="block w-full text-left px-4 py-3 text-lg text-white hover:text-gold hover:bg-white/5 rounded-lg transition-all"
                 >
                   {item.label}
                 </button>
@@ -108,32 +108,32 @@ const Home = () => {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <video
           autoPlay
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-50"
+          className="absolute inset-0 w-full h-full object-cover opacity-40"
         >
           <source src="https://customer-assets.emergentagent.com/job_premiumkaraoke/artifacts/dvuippi1_video111.mp4" type="video/mp4" />
         </video>
         
-        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black"></div>
         
         <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
-          <h1 className="hero-title mb-8">
+          <h1 className="hero-title">
             THE GOLD
           </h1>
-          <p className="hero-subtitle mb-6">
-            Караоке клуб премиум-класса в сердце Паттайи
+          <p className="hero-subtitle">
+            Караоке клуб премиум-класса
           </p>
-          <p className="hero-description mb-12">
+          <p className="hero-description mb-10">
             Лучший звук • Живые эмоции • Авторская кухня • Крафтовое пиво
           </p>
           <Button 
             onClick={() => scrollToSection('booking')}
-            className="btn-3d-gold"
+            className="btn-3d-gold mx-auto"
           >
             Забронировать столик
           </Button>
@@ -141,22 +141,22 @@ const Home = () => {
 
         <button
           onClick={() => scrollToSection('about')}
-          className="absolute bottom-12 left-1/2 transform -translate-x-1/2 text-gold animate-bounce cursor-pointer"
+          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-gold animate-bounce"
         >
-          <ChevronDown size={48} strokeWidth={3} />
+          <ChevronDown size={40} strokeWidth={3} />
         </button>
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-black">
+      <section id="about" className="py-24 bg-black">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             <h2 className="section-title">О нас</h2>
             <div className="gold-divider"></div>
           </div>
 
-          <div className="max-w-5xl mx-auto mb-16">
-            <p className="about-text text-center mb-8">
+          <div className="max-w-4xl mx-auto mb-20">
+            <p className="about-text text-center mb-6">
               The Gold — это не просто караоке. Это место, где каждая нота звучит как золото. 
               У нас — лучший звук в Паттайе, авторская европейская кухня под руководством итальянского шефа 
               и собственная пивоварня с более чем 8 сортами крафтового пива.
@@ -166,7 +166,6 @@ const Home = () => {
             </p>
           </div>
 
-          {/* Photo Gallery - All 8 photos */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
               'https://customer-assets.emergentagent.com/job_premiumkaraoke/artifacts/xm9nd6bp_11.JPG',
@@ -189,7 +188,7 @@ const Home = () => {
                   className="w-full h-72 object-cover"
                 />
                 <div className="gallery-overlay">
-                  <p className="text-gold font-display text-2xl font-bold">THE GOLD</p>
+                  <p className="text-gold font-bold text-xl">THE GOLD</p>
                 </div>
               </div>
             ))}
@@ -198,29 +197,29 @@ const Home = () => {
       </section>
 
       {/* Menu Section */}
-      <section id="menu" className="py-20 bg-gradient-to-b from-black to-dark-gray">
+      <section id="menu" className="py-24 bg-gradient-to-b from-black to-dark-gray">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             <h2 className="section-title">Меню</h2>
             <div className="gold-divider"></div>
           </div>
 
-          <div className="max-w-5xl mx-auto mb-16">
+          <div className="max-w-4xl mx-auto mb-16">
             <p className="about-text text-center">
               Наша кухня — микс итальянского шарма и европейского стиля. В каждом блюде — акцент на вкус, 
               подачу и детали. А крафтовое пиво собственного производства — визитная карточка The Gold.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <Card className="menu-card-3d group">
-              <CardContent className="p-10 text-center">
-                <div className="mb-8">
+              <CardContent className="p-8 text-center">
+                <div className="mb-6">
                   <div className="menu-image-container mb-6">
                     <img 
                       src="https://customer-assets.emergentagent.com/job_premiumkaraoke/artifacts/eln7096t_edaa1.jpg"
                       alt="Меню кухни"
-                      className="w-full h-48 object-cover rounded-lg"
+                      className="w-full h-48 object-cover"
                     />
                   </div>
                   <h3 className="menu-card-title">Меню Кухни</h3>
@@ -233,7 +232,7 @@ const Home = () => {
                   download
                 >
                   <Button className="btn-3d-outline w-full">
-                    <Download className="mr-2" size={20} />
+                    <Download className="mr-2" size={18} />
                     Скачать меню кухни
                   </Button>
                 </a>
@@ -241,13 +240,13 @@ const Home = () => {
             </Card>
 
             <Card className="menu-card-3d group">
-              <CardContent className="p-10 text-center">
-                <div className="mb-8">
+              <CardContent className="p-8 text-center">
+                <div className="mb-6">
                   <div className="menu-image-container mb-6">
                     <img 
                       src="https://customer-assets.emergentagent.com/job_premiumkaraoke/artifacts/r7u9ym0k_alkoo1.png"
                       alt="Барное меню"
-                      className="w-full h-48 object-cover rounded-lg"
+                      className="w-full h-48 object-cover"
                     />
                   </div>
                   <h3 className="menu-card-title">Барное Меню</h3>
@@ -260,7 +259,7 @@ const Home = () => {
                   download
                 >
                   <Button className="btn-3d-outline w-full">
-                    <Download className="mr-2" size={20} />
+                    <Download className="mr-2" size={18} />
                     Скачать барное меню
                   </Button>
                 </a>
@@ -271,25 +270,25 @@ const Home = () => {
       </section>
 
       {/* Halls Section */}
-      <section id="halls" className="py-20 bg-dark-gray">
+      <section id="halls" className="py-24 bg-dark-gray">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="text-center mb-12">
-            <h2 className="section-title">Зал и VIP-зона</h2>
+          <div className="text-center mb-16">
+            <h2 className="section-title">Залы</h2>
             <div className="gold-divider"></div>
           </div>
 
-          <p className="about-text text-center mb-16 max-w-4xl mx-auto">
+          <p className="about-text text-center mb-16 max-w-3xl mx-auto">
             На первом этаже — сцена, свет и драйв. На втором — приватная атмосфера, отдельный бар и премиальный комфорт.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 gap-10">
             <div className="hall-card-3d">
               <h3 className="hall-title">Первый Этаж</h3>
               <div className="hall-image-wrapper">
                 <img 
                   src="https://customer-assets.emergentagent.com/job_2eeabbe5-00cd-41df-984e-a7494f2fec1a/artifacts/ab5qqgmb_ras1.png" 
                   alt="Схема первого этажа" 
-                  className="w-full h-auto rounded-xl"
+                  className="w-full h-auto rounded-lg"
                 />
               </div>
               <p className="hall-description">Основной зал со сценой и танцполом</p>
@@ -301,7 +300,7 @@ const Home = () => {
                 <img 
                   src="https://customer-assets.emergentagent.com/job_2eeabbe5-00cd-41df-984e-a7494f2fec1a/artifacts/yuver50w_ras2.png" 
                   alt="Схема второго этажа" 
-                  className="w-full h-auto rounded-xl"
+                  className="w-full h-auto rounded-lg"
                 />
               </div>
               <p className="hall-description">Приватная VIP-зона</p>
@@ -311,16 +310,16 @@ const Home = () => {
       </section>
 
       {/* Booking Section */}
-      <section id="booking" className="py-20 bg-black">
+      <section id="booking" className="py-24 bg-black">
         <div className="max-w-3xl mx-auto px-6 lg:px-12">
-          <div className="text-center mb-12">
+          <div className="text-center mb-16">
             <h2 className="section-title">Бронирование</h2>
             <div className="gold-divider"></div>
           </div>
 
           <Card className="booking-card-3d">
-            <CardContent className="p-12">
-              <form className="space-y-8">
+            <CardContent className="p-10">
+              <form className="space-y-6">
                 <div>
                   <label className="form-label">Ваше имя</label>
                   <Input 
@@ -330,7 +329,7 @@ const Home = () => {
                   />
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-8">
+                <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <label className="form-label">Дата</label>
                     <Input 
@@ -372,17 +371,19 @@ const Home = () => {
                   </Select>
                 </div>
 
-                <a
-                  href="https://wa.me/66820390661?text=Здравствуйте!%20Хочу%20забронировать%20столик%20в%20The%20Gold"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block"
-                >
-                  <Button type="button" className="btn-3d-gold w-full py-6">
-                    <MessageCircle className="mr-2 flex-shrink-0" size={20} />
-                    <span className="booking-btn-text">Забронировать через WhatsApp</span>
-                  </Button>
-                </a>
+                <div className="flex justify-center pt-4">
+                  <a
+                    href="https://wa.me/66820390661?text=Здравствуйте!%20Хочу%20забронировать%20столик%20в%20The%20Gold"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full"
+                  >
+                    <Button type="button" className="btn-3d-gold w-full">
+                      <MessageCircle size={20} />
+                      <span className="booking-btn-text">Забронировать через WhatsApp</span>
+                    </Button>
+                  </a>
+                </div>
               </form>
             </CardContent>
           </Card>
@@ -390,14 +391,14 @@ const Home = () => {
       </section>
 
       {/* Video Section */}
-      <section id="video" className="py-20 bg-gradient-to-b from-black to-dark-gray">
+      <section id="video" className="py-24 bg-gradient-to-b from-black to-dark-gray">
         <div className="max-w-6xl mx-auto px-6 lg:px-12">
-          <div className="text-center mb-12">
-            <h2 className="section-title">Атмосфера The Gold</h2>
+          <div className="text-center mb-16">
+            <h2 className="section-title">Атмосфера</h2>
             <div className="gold-divider"></div>
           </div>
 
-          <p className="about-text text-center mb-16 max-w-4xl mx-auto">
+          <p className="about-text text-center mb-16 max-w-3xl mx-auto">
             The Gold — это место, где ночь всегда молода. Свет, сцена, голоса, смех и драйв — 
             мы создаём атмосферу, где каждый становится звездой.
           </p>
@@ -405,7 +406,7 @@ const Home = () => {
           <div className="video-wrapper">
             <video
               controls
-              className="w-full h-auto rounded-2xl shadow-2xl"
+              className="w-full h-auto"
             >
               <source src="https://customer-assets.emergentagent.com/job_premiumkaraoke/artifacts/dvuippi1_video111.mp4" type="video/mp4" />
               Your browser does not support the video tag.
@@ -415,14 +416,14 @@ const Home = () => {
       </section>
 
       {/* Footer */}
-      <footer id="contact" className="bg-black border-t border-gold/30 py-16">
+      <footer id="contact" className="bg-black border-t border-white/10 py-16">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-          <div className="grid md:grid-cols-3 gap-16 mb-16">
+          <div className="grid md:grid-cols-3 gap-12 mb-12">
             <div className="text-center md:text-left">
               <img 
                 src="https://customer-assets.emergentagent.com/job_2eeabbe5-00cd-41df-984e-a7494f2fec1a/artifacts/w9regwv9_logo2.png" 
                 alt="The Gold Logo" 
-                className="h-24 w-auto mx-auto md:mx-0 mb-6"
+                className="h-20 w-auto mx-auto md:mx-0 mb-4"
               />
               <p className="footer-text">
                 Караоке клуб премиум-класса в самом сердце Паттайи
@@ -431,9 +432,9 @@ const Home = () => {
 
             <div>
               <h3 className="footer-title">Контакты</h3>
-              <div className="space-y-4 footer-text">
+              <div className="space-y-3 footer-text">
                 <a href="tel:+66820390661" className="footer-link">
-                  <Phone size={20} className="mr-3" />
+                  <Phone size={18} className="mr-3" />
                   +66 82-039-0661
                 </a>
                 <a 
@@ -442,11 +443,11 @@ const Home = () => {
                   rel="noopener noreferrer"
                   className="footer-link"
                 >
-                  <MapPin size={20} className="mr-3 flex-shrink-0" />
+                  <MapPin size={18} className="mr-3 flex-shrink-0" />
                   <span>315, 166-167 Jomtien Second Rd, Pattaya 20150</span>
                 </a>
                 <div className="flex items-start footer-text">
-                  <Clock size={20} className="mr-3 mt-1 flex-shrink-0" />
+                  <Clock size={18} className="mr-3 mt-1 flex-shrink-0" />
                   <div>
                     <p>Пн, Ср-Вс: 20:00 - 02:00</p>
                     <p>Пт-Сб: 20:00 - 03:00</p>
@@ -458,14 +459,14 @@ const Home = () => {
 
             <div>
               <h3 className="footer-title">Мы в соцсетях</h3>
-              <div className="flex space-x-6">
+              <div className="flex space-x-4">
                 <a
                   href="https://instagram.com/thegoldkaraoke"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-icon-3d"
                 >
-                  <Instagram size={26} />
+                  <Instagram size={24} />
                 </a>
                 <a
                   href="https://wa.me/66820390661"
@@ -473,7 +474,7 @@ const Home = () => {
                   rel="noopener noreferrer"
                   className="social-icon-3d"
                 >
-                  <MessageCircle size={26} />
+                  <MessageCircle size={24} />
                 </a>
                 <a
                   href="https://t.me/+66820390661"
@@ -481,13 +482,13 @@ const Home = () => {
                   rel="noopener noreferrer"
                   className="social-icon-3d"
                 >
-                  <Send size={26} />
+                  <Send size={24} />
                 </a>
               </div>
             </div>
           </div>
 
-          <div className="border-t border-gold/30 pt-8 text-center footer-text">
+          <div className="border-t border-white/10 pt-8 text-center footer-text">
             <p>&copy; {new Date().getFullYear()} The Gold Karaoke Club. Все права защищены.</p>
           </div>
         </div>
