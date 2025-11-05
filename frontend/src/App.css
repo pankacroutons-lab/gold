@@ -280,27 +280,35 @@ h3 {
     inset 0 2px 0 rgba(212, 175, 55, 0.15);
 }
 
-/* Inputs */
+/* Inputs with 3D Effect */
 .input-gold {
-  background: rgba(0, 0, 0, 0.5);
-  border: 1px solid var(--gold);
-  border-radius: 0;
-  color: var(--cream);
-  padding: 0.75rem 1rem;
+  background: linear-gradient(145deg, rgba(10, 10, 10, 0.9), rgba(5, 5, 5, 0.95));
+  border: 2px solid var(--gold);
+  border-radius: 8px;
+  color: #FFFFFF;
+  padding: 0.9rem 1.2rem;
   font-family: 'Cormorant', serif;
-  font-size: 1rem;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-size: 1.05rem;
+  font-weight: 500;
+  box-shadow: 
+    inset 0 2px 8px rgba(0, 0, 0, 0.6),
+    0 2px 6px rgba(212, 175, 55, 0.15);
+  transition: all 0.3s ease;
 }
 
 .input-gold:focus {
   border-color: var(--gold-light);
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+  box-shadow: 
+    inset 0 2px 8px rgba(0, 0, 0, 0.5),
+    0 0 20px rgba(212, 175, 55, 0.5),
+    0 4px 12px rgba(212, 175, 55, 0.3);
   outline: none;
+  background: linear-gradient(145deg, rgba(15, 15, 15, 0.95), rgba(8, 8, 8, 0.98));
 }
 
 .input-gold::placeholder {
-  color: var(--cream);
-  opacity: 0.5;
+  color: rgba(247, 245, 242, 0.6);
+  font-style: italic;
 }
 
 /* Video Container */
