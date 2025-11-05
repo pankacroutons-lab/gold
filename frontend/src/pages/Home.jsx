@@ -400,9 +400,9 @@ const Home = () => {
             <video
               controls
               className="w-full h-auto rounded-xl shadow-2xl"
-              poster="https://customer-assets.emergentagent.com/job_2eeabbe5-00cd-41df-984e-a7494f2fec1a/artifacts/w9regwv9_logo2.png"
             >
               <source src="https://customer-assets.emergentagent.com/job_premiumkaraoke/artifacts/dvuippi1_video111.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
             </video>
           </div>
         </div>
