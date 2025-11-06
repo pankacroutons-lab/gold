@@ -21,33 +21,37 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Show repo structure (debug)
+        run: |
+          ls -la
+          echo "--- FRONTEND ---"
+          ls -la frontend || true
+
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
-          cache-dependency-path: frontend/package-lock.json
 
+      # npm ci может падать, если нет package-lock.json → используем npm install
       - name: Install deps
         working-directory: frontend
-        run: npm ci --legacy-peer-deps
+        run: npm install --no-audit --no-fund --legacy-peer-deps
 
-      # Собираем проект (подходит для Vite/CRA/Next.js export)
+      # Пытаемся собрать: Vite/CRA/Next (export). Ошибки не валим.
       - name: Build
         working-directory: frontend
         run: |
-          if npm run | grep -q "export"; then npm run export || true; fi
           npm run build || true
+          if npm run | grep -q "export"; then npm run export || true; fi
 
-      # Определяем папку сборки
+      # Определяем артефакт: dist / build / out / public / сам frontend
       - name: Detect build output
         id: detect
         run: |
-          if [ -d frontend/dist ]; then echo "dir=frontend/dist" >> $GITHUB_OUTPUT;
-          elif [ -d frontend/build ]; then echo "dir=frontend/build" >> $GITHUB_OUTPUT;
-          elif [ -d frontend/out ]; then echo "dir=frontend/out" >> $GITHUB_OUTPUT;
-          else echo "dir=frontend" >> $GITHUB_OUTPUT; fi
-          echo "Using: $(cat $GITHUB_OUTPUT)"
+          for p in frontend/dist frontend/build frontend/out frontend/public frontend; do
+            if [ -d "$p" ]; then echo "dir=$p" >> $GITHUB_OUTPUT; echo "USING $p"; break; fi
+          done
+          cat $GITHUB_OUTPUT
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
